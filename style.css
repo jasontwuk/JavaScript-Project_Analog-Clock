@@ -57,7 +57,7 @@ clock
   transform: translate(-50%, 50%);
   width: 20px;
   height: 20px;
-  background-color: orangered;
+  background: orangered;
   border-radius: 50%;
 }
 .clock::after {
@@ -68,9 +68,114 @@ clock
   transform: translate(-50%, 50%);
   width: 16px;
   height: 16px;
-  background-color: #333;
+  background: #333;
   border-radius: 50%;
   z-index: 11;
+}
+
+/*
+=============== 
+sun-moon-container
+===============
+*/
+.sun-moon-container {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.sun {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: orange;
+  border-radius: 50%;
+  display: block;
+}
+.sunshine {
+  --rotate: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(var(--rotate));
+}
+.sunshine::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 7px;
+  border-radius: 3px;
+  background: orange;
+}
+
+.moon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: yellow;
+  border-radius: 50%;
+  display: none;
+}
+.moon::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: 80%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #002680;
+}
+
+.star-container {
+  position: absolute;
+  top: 3%;
+  left: 60%;
+}
+.star {
+  position: relative;
+  display: block;
+  color: #fff;
+  width: 0px;
+  height: 0px;
+  margin: 5px 0;
+  border-right: 10px solid transparent;
+  border-bottom: 7px solid #fff;
+  border-left: 10px solid transparent;
+  transform: rotate(35deg);
+}
+.star:before {
+  content: "";
+  position: absolute;
+  top: -5.5px;
+  left: -7.5px;
+  display: block;
+  height: 0;
+  width: 0;
+  border-bottom: 8px solid #fff;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  transform: rotate(-35deg);
+}
+.star:after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: -11.5px;
+  display: block;
+  color: #fff;
+  width: 0px;
+  height: 0px;
+  border-right: 10px solid transparent;
+  border-bottom: 7px solid #fff;
+  border-left: 10px solid transparent;
+  transform: rotate(-70deg);
 }
 
 /*
@@ -194,17 +299,58 @@ hand
 .second {
   width: 2px;
   height: 40%;
-  background-color: orangered;
+  background: orangered;
 }
 .minute {
   width: 5px;
   height: 32%;
-  background-color: #333;
+  background: #333;
 }
 .hour {
   width: 8px;
   height: 24%;
-  background-color: #333;
+  background: #333;
+}
+
+/*
+=============== 
+night-mode
+===============
+*/
+body.night-mode {
+  background: linear-gradient(145deg, #213b77, #000);
+  background-size: 400% 400%;
+  animation: gradientBg 30s ease infinite;
+}
+
+body.night-mode .sun {
+  display: none;
+}
+
+body.night-mode .moon {
+  display: block;
+}
+
+body.night-mode .clock {
+  background: #002680;
+  border-color: #fff;
+}
+body.night-mode .clock::after {
+  background: #00aeff;
+}
+
+body.night-mode .num {
+  color: #fff;
+}
+body.night-mode .num::after {
+  background: #fff;
+}
+
+body.night-mode .minute {
+  background: #00aeff;
+}
+body.night-mode .hour {
+  background: #00aeff;
 }
 
 /*
