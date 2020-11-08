@@ -17,7 +17,7 @@ function setClock() {
   // console.log(date);
   const hours = date.getHours();
   // *** get 'true', when the hour is between 6:00 and 18:00
-  const isDayTime = hours > 5 && hours < 17;
+  const isDayTime = hours > 5 && hours < 18;
 
   const secondRatio = date.getSeconds() / 60;
   const minuteRatio = (date.getMinutes() + secondRatio) / 60;
