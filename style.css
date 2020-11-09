@@ -48,6 +48,7 @@ clock
   background: #fff;
   border: 5px solid #333;
   border-radius: 50%;
+  transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
 }
 .clock::before {
   content: "";
@@ -91,6 +92,7 @@ sun-moon-container
   background: orange;
   border-radius: 50%;
   display: block;
+  transition: display 0.3s ease-in-out;
 }
 .sunshine {
   --rotate: 0;
@@ -120,6 +122,7 @@ sun-moon-container
   background: yellow;
   border-radius: 50%;
   display: none;
+  transition: display 0.3s ease-in-out;
 }
 .moon::before {
   content: "";
@@ -193,6 +196,7 @@ number
   padding: 0.7rem;
   color: #333;
   transform: rotate(var(--rotate));
+  transition: color 0.3s ease-in-out;
 }
 .num::after {
   content: "";
@@ -305,11 +309,13 @@ hand
   width: 5px;
   height: 32%;
   background: #333;
+  transition: background 0.3s ease-in-out;
 }
 .hour {
   width: 8px;
   height: 24%;
   background: #333;
+  transition: background 0.3s ease-in-out;
 }
 
 /*

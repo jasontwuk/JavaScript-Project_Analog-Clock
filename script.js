@@ -37,4 +37,10 @@ function displaySunOrMoon(condition) {
   }
 }
 
+// *** for testing transitions in css
+// clock.addEventListener("click", () => {
+//   const isNightMode = body.classList.contains("night-mode");
+//   displaySunOrMoon(isNightMode);
+// });
+
 setClock();
